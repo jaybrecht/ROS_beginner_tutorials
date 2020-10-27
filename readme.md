@@ -33,13 +33,26 @@ cd ~/catkin_ws/
 catkin_make
 ```
 
-To run the talker node:
+To run the nodes you will need three terminals. In the first type:
+
 ```
+source /opt/ros/melodic/setup.bash
+roscore
+```
+
+In the second terminal type below to run the talker node
+
+```
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash
 rosrun beginner_tutorials talker
 ```
 
-To run the listener node:
+In the second terminal type below to run the listener node:
+
 ```
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash
 rosrun beginner_tutorials listener
 ```
 
