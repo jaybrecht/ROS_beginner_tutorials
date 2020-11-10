@@ -56,3 +56,12 @@ source ~/catkin_ws/devel/setup.bash
 rosrun beginner_tutorials listener
 ```
 
+## Changing the Greeting
+
+The talker node inlcudes a service that allows for the greeting to be changed. To call this service type below in a separate terminal. (Note: the talker nodes needs to be running before this service can be called)
+
+```
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+rosrun beginner_tutorials change_greeting <New Greeting>
+```
