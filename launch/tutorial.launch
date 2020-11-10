@@ -1,0 +1,10 @@
+<launch>
+    <arg name="pub_rate" default="10"/>
+    <group>
+        <node pkg="beginner_tutorials" type="talker" name="talker_node" output="screen" args="$(arg pub_rate)"/> 
+    </group>
+
+    <group>
+        <node pkg="beginner_tutorials" type="listener" name="listener_node" output="screen"/>
+    </group>
+</launch>

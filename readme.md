@@ -48,6 +48,13 @@ source ~/catkin_ws/devel/setup.bash
 rosrun beginner_tutorials talker
 ```
 
+If desired the rate at which new messages are published can be changed with a command line argument. The rate will be how many times a message is published per second. The default is 10.
+
+```
+rosrun beginner_tutorials talker <rate>
+```
+
+
 In the second terminal type below to run the listener node:
 
 ```
@@ -64,4 +71,20 @@ The talker node inlcudes a service that allows for the greeting to be changed. T
 source /opt/ros/melodic/setup.bash
 source ~/catkin_ws/devel/setup.bash
 rosrun beginner_tutorials change_greeting <New Greeting>
+```
+
+## Starting with Launch file 
+
+Both nodes can be started with a launch file:
+
+```
+source /opt/ros/melodic/setup.bash
+source ~/catkin_ws/devel/setup.bash
+roslaunch beginner_tutorials tutorial.launch
+```
+
+You can change the publishing rate by modifying the pub_rate argument
+
+```
+roslaunch beginner_tutorials tutorial.launch pub_rate:=1
 ```
