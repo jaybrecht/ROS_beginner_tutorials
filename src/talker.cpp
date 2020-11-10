@@ -5,6 +5,7 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "beginner_tutorials/ChangeGreeting.h"
+#include <tf/transform_broadcaster.h>
 
 std::string greeting = "Welcome to ENPM808X ";
 
@@ -54,6 +55,16 @@ int main(int argc, char **argv) {
     msg.data = greeting + std::to_string(count);
     ROS_INFO_STREAM(msg.data);
     chatter_pub.publish(msg);
+
+    static tf::TransformBroadcaster br;
+    tf::Transform transform;
+    transform.setOrigin(tf::Vector3(5, 10, 0) );
+    tf::Quaternion q;
+    q.setRPY(0, 0, 60);
+    transform.setRotation(q);
+    br.sendTransform(tf::StampedTransform(transform, ros::Time::now(), "world", "talk"));
+
+
     ros::spinOnce();
     loop_rate.sleep();
     ++count;

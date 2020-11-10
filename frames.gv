@@ -1,0 +1,7 @@
+digraph G {
+"world" -> "talk"[label="Broadcaster: /talker\nAverage rate: 1.250 Hz\nMost recent transform: 1605047449.748 ( 0.388 sec old)\nBuffer length: 4.000 sec\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1605047450.136"[ shape=plaintext ] ;
+ }->"world";
+}
